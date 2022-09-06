@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Name": "KIM JOHN PU",
+    "Profile": "Since 1946, the American Cancer Society (ACS), the nation’s #1 trusted source for cancer information, has invested more than $5 billion in cancer research to find better treatments, uncover causation factors, and improve patient care and quality of life. \\r\\n\\r\\nSYNA Medical is a proud supporter of ACS and with our breakthrough Gloves with a PurposeTM campaign, you can be too.",
+    "ImageUrl": "/images/Doctor1.jpg",
+    "Comment": "s simply dummy text of the  printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a  galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in"
+  },
+  {
+    "Id": 2,
+    "Name": "JOHN Lee",
+    "Profile": "Since 1946, the American Cancer Society (ACS), the nation’s #1 trusted source for cancer information, has invested more than $5 billion in cancer research to find better treatments, uncover causation factors, and improve patient care and quality of life. \\r\\n\\r\\nSYNA Medical is a proud supporter of ACS and with our breakthrough Gloves with a PurposeTM campaign, you can be too.",
+    "ImageUrl": "/images/Doctor2.jpg",
+    "Comment": "s simply dummy text of the  printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a  galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in"
+
+  },
+  {
+    "Id": 3,
+    "Name": "Debora Kuratha",
+    "Profile": "Since 1946, the American Cancer Society (ACS), the nation’s #1 trusted source for cancer information, has invested more than $5 billion in cancer research to find better treatments, uncover causation factors, and improve patient care and quality of life. \\r\\n\\r\\nSYNA Medical is a proud supporter of ACS and with our breakthrough Gloves with a PurposeTM campaign, you can be too.",
+    "ImageUrl": "/images/Doctor3.jpg",
+    "Comment": "s simply dummy text of the  printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a  galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in"
+
+
+  }
+]

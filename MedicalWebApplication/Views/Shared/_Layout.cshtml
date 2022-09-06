@@ -1,0 +1,86 @@
+﻿@{
+    var fullName = Context.Session.GetString("FullName");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Medicals</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="header-img">
+
+        <nav class="navbar navbar-expand-sm navbar-nav ml-auto">
+            @if (fullName != null)
+            {
+                <div class="navbar-brand">
+                    <img src="~/images/🚣 Logo Center (Row For Content Columns).svg" alt="Logo" />
+                </div>
+                <a><img src="~/images/Avatar.jpg" height="30" width="30"></a>
+                <ul class="navbar-nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a asp-controller="" asp-action="" class="nav-link">Welcome @fullName</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Auth" asp-action="Logout" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+            }
+            else
+            {
+                <div class="navbar-brand">
+                    <img src="~/images/🚣 Logo Center (Row For Content Columns).svg" alt="Logo" />
+                </div>
+                <ul class="navbar-nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Auth" asp-action="Register" class="nav-link">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Auth" asp-action="Login" class="nav-link">Login</a>
+                    </li>
+                </ul>
+            }
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <img src="~/images/footerLogo.svg" alt="Logo" />
+            <div class="footer-container-img">
+                <a href="#"><img src="~/images/Vector.svg" alt="Alternate Text" /></a>
+                <a href="#"><img src="~/images/Vector (1).svg" alt="Alternate Text" /></a>
+                <a href="#"><img src="~/images/Vector (2).svg" alt="Alternate Text" /></a>
+                <a href="#"><img src="~/images/Vector (3).svg" alt="Alternate Text" /></a>
+            </div>
+        </div>
+        <div class="footer-info">
+            <div class="footer-info-message">
+                <p class="footer-info-message">
+                    Thank you for subscribing to our newsletter.[Your company name]
+                    team will work hard to deliver good quality information in the fields you have specified upon subscription.
+                    However, if you decide that you no longer want to receive such emails from us, feel free to click the link below.
+                </p>
+            </div>
+            <div><a href="#">Unsuscribe</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">View in browser</a></div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

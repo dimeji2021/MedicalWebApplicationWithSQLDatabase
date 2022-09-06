@@ -1,0 +1,221 @@
+﻿@model PaginationViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+    var fullName = Context.Session.GetString("FullName");
+
+}
+<body>
+    <img src="~/images/📷 Image (1).svg" alt="Chef" class="display-img" />
+
+    <article class="article-c">
+        <div class="article">
+            <p class="article-text1">Our gloves are holding hands with research teams at the American Cancer Society.</p>
+            <p class="article-text2">Gloves with a Purpose <sup>TM</sup> from SYNA Medical</p>
+            <p class="article-text3">
+                Since 1946, the American Cancer Society (ACS), the nation’s #1 trusted source for cancer information,
+                has invested more than $5 billion in cancer research to find better treatments, uncover causation factors,
+                and improve patient care and quality of life. <br /><br />
+                SYNA Medical is a proud supporter of ACS and with our breakthrough Gloves with a PurposeTM campaign, you can be too.
+            </p>
+        </div>
+    </article>
+    @* ---------------------------------------------------------------------Dynamically Generated----------------------------------------------------------------------------*@
+    @if (fullName != null)
+    {
+        @foreach (var item in Model.Doctors)
+        {
+            if (item.Id == 1)
+            {
+                <section class="profile">
+                    <img src="@item.ImageUrl" class="profile-img" />
+                    <div class="profile-info">
+                        <a asp-controller="Doctor" asp-action="Doctor" asp-route-id="@item.Id" class="profile-info-name">@item.Name</a>
+                        <p class="profile-info-bio">@item.Comment</p>
+                    </div>
+                </section>
+            }
+            else if (item.Id == 2)
+            {
+                <section class="profile">
+                    <div class="profile-info">
+                        <a asp-controller="Doctor" asp-action="Doctor" asp-route-id="@item.Id" class="profile-info-name">@item.Name</a>
+                        <p class="profile-info-bio">@item.Comment</p>
+                    </div>
+                    <img src="@item.ImageUrl" class="profile-img" />
+                </section>
+            }
+            else
+            {
+                <section class="profile3">
+                    <img src="@item.ImageUrl" class="profile3-img" />
+                    <a asp-controller="Doctor" asp-action="Doctor" asp-route-id="@item.Id" class="profile3-name">@item.Name</a>
+                    <div class="profile3-info">
+                        <p class="profile3-bio">@item.Comment</p>
+                    </div>
+                </section>
+            }
+        }
+
+    }
+    else
+    {
+        @foreach (var item in Model.Doctors)
+        {
+            if (item.Id == 1)
+            {
+                <section class="profile">
+                    <img src="@item.ImageUrl" class="profile-img" />
+                    <div class="profile-info">
+                        <a asp-controller="Auth" asp-action="Register" asp-route-id="@item.Id" class="profile-info-name">@item.Name</a>
+                        <p class="profile-info-bio">@item.Comment</p>
+                    </div>
+                </section>
+            }
+            else if (item.Id == 2)
+            {
+                <section class="profile">
+                    <div class="profile-info">
+                        <a asp-controller="Auth" asp-action="Register" asp-route-id="@item.Id" class="profile-info-name">@item.Name</a>
+                        <p class="profile-info-bio">@item.Comment</p>
+                    </div>
+                    <img src="@item.ImageUrl" class="profile-img" />
+                </section>
+            }
+            else
+            {
+                <section class="profile3">
+                    <img src="@item.ImageUrl" class="profile3-img" />
+                    <a asp-controller="Auth" asp-action="Register" asp-route-id="@item.Id" class="profile3-name">@item.Name</a>
+                    <div class="profile3-info">
+                        <p class="profile3-bio">@item.Comment</p>
+                    </div>
+                </section>
+            }
+        }
+    }
+    @* ---------------------------------------------------------------------Dynamically Generated----------------------------------------------------------------------------*@
+    <div class="container">
+        <section class="profile4">
+            @foreach (var item in Model.Products)
+            {
+                <div class="profile4-content">
+                    <img src="@item.ProductImageUrl" class="profile4-content-img" />
+                    <p class="profile4-content-text1">@item.ProductName</p>
+                    <p class="profile4-content-text2">@item.ProductDescription</p>
+                    <a href="@item.ProductLink">Read more></a>
+                </div>
+            }
+        </section>
+
+        <nav aria-label="Page navigation" class="page-navigtion">
+            <ul class="pagination">
+                <li class="page-item d-flex align-items-center">
+                    <a href=""><i class="fa fa-chevron-left"></i></a>
+                    <a class="page-link ml-2" asp-route-page="@Model.PreviousPage">
+                        Prev
+                    </a>
+                </li>
+                @for (int i = 1; i <= Model.NumberPages; i++)
+                {
+                    <li class="page-item ">
+                        @if (Model.CurrentPage == i)
+                        {
+                            <a class="page-link" asp-route-page="@i" style="background-color:blue;">
+                                @i
+                            </a>
+                        }
+                        else
+                        {
+                            <a class="page-link" asp-route-page="@i">
+                                @i
+                            </a>
+                        }
+
+                    </li>
+                }
+
+                <li class="page-item d-flex align-items-center">
+                    <a class="page-link mr-2" asp-route-page="@Model.NextPage">
+                        Next
+                    </a>
+                    <a href=""><i class="fa fa-chevron-right"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    @* ---------------------------------------------------------------------Dynamically Generated----------------------------------------------------------------------------*@
+
+    <section class="section-donate">
+        <div class="section-donate-content">
+            <p class="section-donate-content-cancer">Woman cancer</p>
+            <p class="section-donate-content-gap">Close the <br />Care Gap</p>
+            <div class="section-donate-button"><button>Donate</button></div>
+            <img src="~/images/wc1.svg" alt="Lady's image" class="section-donate-content-img" />
+        </div>
+        <div class="section-donate-content">
+            <p class="section-donate-content-cancer">Woman cancer</p>
+            <p class="section-donate-content-gap">Close the <br />Care Gap</p>
+            <div class="section-donate-button"><button>Donate</button></div>
+            <img src="~/images/wc1.svg" alt="Lady's image" class="section-donate-content-img" />
+        </div>
+    </section>
+    <section class="section-gloves">
+        <div class="section-gloves-content">
+            <p class="section-gloves-content-txt1">Gloves with a<br />porpouse</p>
+            <p class="section-gloves-content-txt2">Lorem Ipsum is simply dummy <br /> text of the printing and <br />typesetting industry. Lorem <br /> Ipsum is simply dummy text of <br /> the printing and </p>
+            <div class="section-gloves-content-button"><button>Learn more</button></div>
+        </div>
+        <img src="~/images/Gloves Box - Mockup 02 2.png" alt="Alternate Text" class="section-gloves-img-img" />
+    </section>
+    <section class="section-donate-2">
+        <div class="section-donate-2-content">
+            <p class="section-donate-2-content-cancer">Woman cancer</p>
+            <p class="section-donate-2-content-gap">Close the Care Gap</p>
+            <div class="section-donate-2-button"><button>Donate</button></div>
+            <img src="~/images/wc1.svg" alt="Lady's image" class="section-donate-2-content-img" />
+        </div>
+    </section>
+    <br />
+    <br />
+    <section class="section-facts">
+        @* ---------------------------------------------------------------------Research Statistics Generated----------------------------------------------------------------------------*@
+        <div>
+            <div class="section-facts-content">
+                <span class="section-facts-content-figure"> <sup class="section-facts-content-symbol">$</sup> @Model.Research.NewResearch</span>
+                <a href="#" class="section-facts-content-link">New Research</a>
+            </div>
+        </div>
+        <div>
+            <div class="section-facts-content">
+                <span class="section-facts-content-figure support"><sup class="section-facts-content-symbol support">%</sup> @Model.Research.CancerSupport</span>
+                <a href="#" class="section-facts-content-link support">Cancer Support</a>
+            </div>
+        </div>
+        <div>
+            <div class="section-facts-content research">
+                <span class="section-facts-content-figure x">@Model.Research.CancerResearch</span>
+                <a href="#" class="section-facts-content-link">Cancer Research</a>
+            </div>
+        </div>
+        @* ---------------------------------------------------------------------Research Statistics Generated----------------------------------------------------------------------------*@
+    </section>
+    <br />
+    <br />
+    <section class="section-contact">
+        <div class="section-contact-content">
+            <img src="~/images/email (1).svg" alt="email-logo" class="section-contact-content-img" />
+            <p class="section-contact-content-txt">It was popularised<br />in the 1960s with</p>
+            <a href="#" class="section-contact-content-link">Read more</a>
+        </div>
+        <div class="section-contact-content">
+            <img src="~/images/recycle.svg" alt="recycle=logo" class="section-contact-content-img" />
+            <p class="section-contact-content-txt">Lorem Ipsum</p>
+            <a href="#" class="section-contact-content-link">Read more</a>
+        </div>
+        <div class="section-contact-content">
+            <img src="~/images/brokenImage (1).svg" alt="" class="section-contact-content-img" />
+            <p class="section-contact-content-txt">Aldus PageMaker<br />including</p>
+            <a href="#" class="section-contact-content-link">Read more</a>
+        </div>
+    </section>
+</body>

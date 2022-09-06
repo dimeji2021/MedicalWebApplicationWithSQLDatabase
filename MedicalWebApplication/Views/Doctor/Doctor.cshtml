@@ -1,0 +1,23 @@
+﻿@model DoctorViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+ <div class="profile-doc">
+   <img src="@Model.ImageUrl" class="profile-img-doc" />
+   <div class="profile-content-doc">
+       <p class="profile-signature">@Model.Name</p>
+       <p class="profile-profile-doc">@Model.Profile</p>
+   </div>
+ </div> 
+
+
+
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

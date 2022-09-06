@@ -1,0 +1,22 @@
+[
+  {
+    "NewResearch": 10,
+    "CancerSupport": 302,
+    "CancerResearch": 12
+  },
+  {
+    "NewResearch": 20,
+    "CancerSupport": 506,
+    "CancerResearch": 32
+  },
+  {
+    "NewResearch": 35,
+    "CancerSupport": 1500,
+    "CancerResearch": 20
+  },
+  {
+    "NewResearch": 40,
+    "CancerSupport": 3000,
+    "CancerResearch": 30
+  }
+]
